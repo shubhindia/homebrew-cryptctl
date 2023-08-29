@@ -5,20 +5,20 @@
 class Cryptctl < Formula
   desc "CLI for managing secrets to be used with encrypted-secrets"
   homepage "https://github.com/shubhindia/cryptctl"
-  version "0.0.2"
+  version "0.0.3"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/shubhindia/cryptctl/releases/download/v0.0.2/cryptctl-0.0.2-darwin-amd64.tar.gz"
-      sha256 "afec10815b24e1de8fe3a219a0cc32fc1484090c650167eefdabb8549ef7611f"
+    if Hardware::CPU.arm?
+      url "https://github.com/shubhindia/cryptctl/releases/download/v0.0.3/cryptctl-0.0.3-darwin-arm64.tar.gz"
+      sha256 "41b27d92fe14bfddd6f1973cd6513ed6506b1c233eb9d19c633c70b2f3650ae3"
 
       def install
         bin.install "cryptctl"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/shubhindia/cryptctl/releases/download/v0.0.2/cryptctl-0.0.2-darwin-arm64.tar.gz"
-      sha256 "5456ff53d29a38b298ccf3e26a5f5d5c0aaae0c462f03135de77284d448f9bde"
+    if Hardware::CPU.intel?
+      url "https://github.com/shubhindia/cryptctl/releases/download/v0.0.3/cryptctl-0.0.3-darwin-amd64.tar.gz"
+      sha256 "76a07206e1272de80dcba3400bea815f773aeffdaa5f56d8d2f015e988001bf5"
 
       def install
         bin.install "cryptctl"
@@ -27,17 +27,17 @@ class Cryptctl < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/shubhindia/cryptctl/releases/download/v0.0.2/cryptctl-0.0.2-linux-amd64.tar.gz"
-      sha256 "edd85b754c7285bf137134159f03e68f2d7bb4e716c1ec98635d87ce1e607a11"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/shubhindia/cryptctl/releases/download/v0.0.3/cryptctl-0.0.3-linux-arm64.tar.gz"
+      sha256 "7207d8afedb3e8bff8a095838f174be8afbc2a853ddb052a421bc55eaf943c48"
 
       def install
         bin.install "cryptctl"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/shubhindia/cryptctl/releases/download/v0.0.2/cryptctl-0.0.2-linux-arm64.tar.gz"
-      sha256 "8d5c0e7523393cb2e76639875e9b730487ec4b49be2a3effe67f98a0697d2afe"
+    if Hardware::CPU.intel?
+      url "https://github.com/shubhindia/cryptctl/releases/download/v0.0.3/cryptctl-0.0.3-linux-amd64.tar.gz"
+      sha256 "160c96a10d0ae22567f2ff84ce76563a2bf4eafa3de1904bcd1c36a166de241e"
 
       def install
         bin.install "cryptctl"
