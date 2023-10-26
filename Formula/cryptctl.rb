@@ -5,20 +5,20 @@
 class Cryptctl < Formula
   desc "CLI for managing secrets to be used with encrypted-secrets"
   homepage "https://github.com/shubhindia/cryptctl"
-  version "0.0.3"
+  version "0.0.4"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/shubhindia/cryptctl/releases/download/v0.0.3/cryptctl-0.0.3-darwin-arm64.tar.gz"
-      sha256 "41b27d92fe14bfddd6f1973cd6513ed6506b1c233eb9d19c633c70b2f3650ae3"
+    if Hardware::CPU.intel?
+      url "https://github.com/shubhindia/cryptctl/releases/download/v0.0.4/cryptctl-0.0.4-darwin-amd64.tar.gz"
+      sha256 "a97c20ad4f43089aa1d29671d23aecb92281cb865cdba0227afed94e4c66575f"
 
       def install
         bin.install "cryptctl"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/shubhindia/cryptctl/releases/download/v0.0.3/cryptctl-0.0.3-darwin-amd64.tar.gz"
-      sha256 "76a07206e1272de80dcba3400bea815f773aeffdaa5f56d8d2f015e988001bf5"
+    if Hardware::CPU.arm?
+      url "https://github.com/shubhindia/cryptctl/releases/download/v0.0.4/cryptctl-0.0.4-darwin-arm64.tar.gz"
+      sha256 "d10b888eac036af5080528a16cb60c8d8e48fffce03df656806a9b15c5abfe42"
 
       def install
         bin.install "cryptctl"
@@ -28,16 +28,16 @@ class Cryptctl < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/shubhindia/cryptctl/releases/download/v0.0.3/cryptctl-0.0.3-linux-arm64.tar.gz"
-      sha256 "7207d8afedb3e8bff8a095838f174be8afbc2a853ddb052a421bc55eaf943c48"
+      url "https://github.com/shubhindia/cryptctl/releases/download/v0.0.4/cryptctl-0.0.4-linux-arm64.tar.gz"
+      sha256 "62426cb6104d99f81edbbbf7833e90ddd39ee612c67d5a97406808ed09bb9384"
 
       def install
         bin.install "cryptctl"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/shubhindia/cryptctl/releases/download/v0.0.3/cryptctl-0.0.3-linux-amd64.tar.gz"
-      sha256 "160c96a10d0ae22567f2ff84ce76563a2bf4eafa3de1904bcd1c36a166de241e"
+      url "https://github.com/shubhindia/cryptctl/releases/download/v0.0.4/cryptctl-0.0.4-linux-amd64.tar.gz"
+      sha256 "057ca43a060736b140867339b9bb9bb47e97050dac099400890cf269638b4217"
 
       def install
         bin.install "cryptctl"
